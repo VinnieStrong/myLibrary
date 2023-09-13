@@ -1,0 +1,79 @@
+html {
+    font-family: 'Roboto';
+}
+.container {
+    display: grid;
+    grid-template-rows: 50px 1fr 20px;
+    
+}
+header {
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: baseline;
+    background-color: rgba(211, 198, 198, 0.996);
+    box-shadow: 5px 5px 5px 1px;
+}
+footer {
+    background-color: rgba(211, 198, 198, 0.996);
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 5px 5px 5px 1px;
+
+}
+svg {
+    margin-bottom: -5px;    
+}
+.login {
+    margin-left: auto;
+    font-size: 18px;
+    font-weight: 700;
+    width: 70px;
+    height: 40px;
+    border-radius: 13px;
+    grid-row: 1;
+    grid-column: 2;
+}
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+#show-form {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    width: 160px;
+    height: 40px;
+    border-radius: 13px;
+    grid-row: 1;
+    grid-column: 2;
+}
+h1 {
+    border-color: aliceblue;
+}
+
+ul {
+    list-style: none;
+}
+.form-container {
+    display: grid;
+    grid-template-columns: 150px 200px;
+}
+table {
+    border:solid  1px;
+}
+.large-header {
+    width: 200px;
+    border:solid  1px;
+
+}
+.header {
+    width: 80px;
+    border:solid  1px;
+
+}
+.c-icon {
+    padding-top: 15px;;
+}
