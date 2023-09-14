@@ -55,8 +55,8 @@ addBook.addEventListener('click', () => {
     readStatus.checked = false;
 })
 //Create hanger book-list
-const hanger = document.getElementById('books-list');
-//const tableRaw = document.querySelector('.table-raw');
+//const hanger = document.getElementById('books-list');
+  const hanger = document.querySelector('.books-container');
 
 //Displays the array of books
 function displayBooks(array) {
@@ -77,20 +77,10 @@ function displayBooks(array) {
             console.log(array[i].read);
             displayBooks(myLibrary);
         });
-       const bookList = document.createElement('li');
-        //const firstCell = document.createElement('tc');
-        //firstCell.textContent = `${array[i].name}`;
-        
-        //const secondCell = document.createElement('tc');
-        //secondCell.textContent = `${array[i].author}`;
-        
-        //const thirdCell = document.createElement('tc');
-        //thirdCell.textContent = `${array[i].pages}`;
-        
-            const readStatusText = array[i].read ? 'read' : 'not read';
-        //const fourthCell = document.createElement('td');
-        //fourthCell.textContent = `${readStatusText}`;
-
+       //const bookList = document.createElement('li');
+       const  bookList = document.createElement('div');
+       
+       const readStatusText = array[i].read ? 'read' : 'not read';
         const removeButton = document.createElement('button');
         removeButton.textContent = 'clear';
         removeButton.className = 'remove-button';
@@ -103,12 +93,6 @@ function displayBooks(array) {
         hanger.appendChild(bookList);
         bookList.appendChild(removeButton);
         bookList.appendChild(changeBox);
-        //tableRaw.appendChild(firstCell);
-        //tableRaw.appendChild(secondCell);
-        //tableRaw.appendChild(thirdCell);
-        //tableRaw.appendChild(changeBox);
-        //tableRaw.appendChild(fourthCell);
-        //tableRaw.appendChild(removeButton);
     }
 }
 displayBooks(myLibrary);
