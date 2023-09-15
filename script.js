@@ -79,20 +79,21 @@ function displayBooks(array) {
         });
        //const bookList = document.createElement('li');
        const  bookList = document.createElement('div');
+       bookList.className = "card";
        
        const readStatusText = array[i].read ? 'read' : 'not read';
         const removeButton = document.createElement('button');
-        removeButton.textContent = 'clear';
+        removeButton.textContent = 'REMOVE FROM LIBRARY';
         removeButton.className = 'remove-button';
         removeButton.addEventListener('click', () => {
             myLibrary.splice(i, 1);
             displayBooks(myLibrary);
         });
         
-        bookList.textContent = `${array[i].name} by ${array[i].author}. ${array[i].pages} pages, status: ${readStatusText}`;
+        bookList.textContent = `${array[i].name} by ${array[i].author}, ${array[i].pages} pages. \r\n status: ${readStatusText}.\r\n`;
         hanger.appendChild(bookList);
-        bookList.appendChild(removeButton);
         bookList.appendChild(changeBox);
+        bookList.appendChild(removeButton);
     }
 }
 displayBooks(myLibrary);

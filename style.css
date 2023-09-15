@@ -14,14 +14,6 @@ html {
     
 }
 header {
-/*
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: baseline;
-    background-color: rgba(211, 198, 198, 0.996);
-    box-shadow: 5px 5px 5px 1px;
-*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,4 +96,24 @@ table {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+}
+.card {
+    border: solid black;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgb(250, 239, 239);
+    white-space: pre-line;
+    display: flex;
+    flex-direction: column;
+}
+#my-form {
+    background-color: aqua;
+    align-self: center;
+}
+.form-box {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
