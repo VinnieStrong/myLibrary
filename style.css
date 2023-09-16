@@ -9,6 +9,7 @@ html {
 
 }
 .container {
+    width: 1080px;
     display: grid;
     grid-template-rows: 50px 1fr 40px;
     
@@ -76,9 +77,13 @@ ul {
     list-style: none;
 }
 .form-container {
-    display: grid;
-    grid-template-columns: 150px 200px;
+    display: flex;
+    width: 250px;
+    text-align: center;
+    background-color: rgba(211, 198, 198, 0.996);
+    border-radius: 15px;
 }
+
 table {
     border:solid  1px;
 }
@@ -107,13 +112,39 @@ table {
     display: flex;
     flex-direction: column;
 }
-#my-form {
-    background-color: aqua;
-    align-self: center;
-}
+
 .form-box {
     
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
 }
+.form-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.form-info input {
+    width: 180px;
+    border-radius: 5px;
+}
+.form-info > button {
+    width: 100px;
+    border-radius: 5px;
+}
+.form-info > .read-check {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    border-radius: 5px;
+    width: 100px;
+    background-color: rgb(250, 239, 239);
+
+}
+#read-status {
+    align-self: center;
+}
+.
