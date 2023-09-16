@@ -13,6 +13,7 @@ Book.prototype.changeReadingStatus = function() {
     this.read = !this.read;
 };
 
+
 //Add a book to the library
 function addBookToLibrary(book) {
     myLibrary.push(book);
@@ -68,8 +69,15 @@ function displayBooks(array) {
     for (let i = 0; i < array.length; i++) {
         //Create change status button 
         const changeBox = document.createElement('button');
-        changeBox.textContent = 'CHANGE STATUS';
-
+        changeBox.className = "change-box";
+        if (array[i].read === true) {
+            changeBox.textContent = 'READ';
+            changeBox.style.backgroundColor = 'green';
+        }
+        else {
+            changeBox.textContent = 'NOT READ';
+            changeBox.style.backgroundColor = 'orange';
+        }         
         //Add event listener
         changeBox.addEventListener('click', () => {
             //Call function on 'i' element of the array
@@ -82,8 +90,9 @@ function displayBooks(array) {
        bookList.className = "card";
        
        const readStatusText = array[i].read ? 'read' : 'not read';
+       readStatusText.className = 'read-status-text';
         const removeButton = document.createElement('button');
-        removeButton.textContent = 'REMOVE FROM LIBRARY';
+        removeButton.textContent = 'CANCEL BOOK';
         removeButton.className = 'remove-button';
         removeButton.addEventListener('click', () => {
             myLibrary.splice(i, 1);
