@@ -45,6 +45,28 @@ addBook.addEventListener('click', () => {
     const pages = document.getElementById('pages');
     const readStatus = document.getElementById('read-status');
 
+    if (name.value.trim() === '') {
+        name.style.borderColor = 'red';
+        name.placeholder = '* please insert a valid title';
+        name.addEventListener('keypress', () => {
+            name.style.borderColor = 'green';
+        })
+    }
+    else if (author.value.trim() === '') {
+        author.style.borderColor = 'red';
+        author.placeholder = '* please provide a valid author';
+        author.addEventListener('keypress', () => {
+            author.style.borderColor = 'green';
+        })
+    }
+    else if (pages.value.trim() === '' || pages.value < 2) {
+        pages.style.borderColor = 'red';
+        pages.placeholder = '* please provide a valid author';
+        pages.addEventListener('keypress', () => {
+            pages.style.borderColor = 'green';
+        })
+    }
+    else {
     //Create new book object with the values of the elements
     const newBook = new Book(name.value, author.value, pages.value, readStatus.checked);
     addBookToLibrary(newBook);
@@ -54,7 +76,9 @@ addBook.addEventListener('click', () => {
     author.value = '';
     pages.value = '';
     readStatus.checked = false;
-})
+    
+    }
+});
 //Create hanger book-list
 //const hanger = document.getElementById('books-list');
   const hanger = document.querySelector('.books-container');
