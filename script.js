@@ -47,23 +47,34 @@ addBook.addEventListener('click', () => {
 
     if (name.value.trim() === '') {
         name.style.borderColor = 'red';
+        name.style.opacity = 0.5; 
         name.placeholder = '* please insert a valid title';
         name.addEventListener('keypress', () => {
             name.style.borderColor = 'green';
+            name.style.backgroundColor = 'green';
+            name.style.opacity = 0.5;
+            name.style.fontWeight = 900; 
         })
     }
     else if (author.value.trim() === '') {
         author.style.borderColor = 'red';
+        author.style.opacity = 0.5;
         author.placeholder = '* please provide a valid author';
         author.addEventListener('keypress', () => {
             author.style.borderColor = 'green';
+            author.style.backgroundColor = 'green';
+            author.style.opacity = 0.5; 
         })
     }
     else if (pages.value.trim() === '' || pages.value < 2) {
         pages.style.borderColor = 'red';
-        pages.placeholder = '* please provide a valid author';
+        pages.style.backgroundColor = 'red';
+        pages.style.opacity = 0.5; 
+        pages.placeholder = '* please enter page number';
         pages.addEventListener('keypress', () => {
             pages.style.borderColor = 'green';
+            pages.style.backgroundColor = 'green';
+            pages.style.opacity = 0.5; 
         })
     }
     else {
