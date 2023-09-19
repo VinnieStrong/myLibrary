@@ -44,11 +44,16 @@ addBook.addEventListener('click', () => {
     const author = document.getElementById('author');
     const pages = document.getElementById('pages');
     const readStatus = document.getElementById('read-status');
+    
+    //Check name/author/pages values, if they are empty or only
+    //white spaces(with trim()) and adjust bordercolor and placeolder
 
+    
     if (name.value.trim() === '') {
         name.style.borderColor = 'red';
         name.style.opacity = 0.5; 
         name.placeholder = '* please insert a valid title';
+        //when a key is press the color becomes green
         name.addEventListener('keypress', () => {
             name.style.borderColor = 'green';
             name.style.backgroundColor = 'green';
@@ -87,6 +92,9 @@ addBook.addEventListener('click', () => {
     author.value = '';
     pages.value = '';
     readStatus.checked = false;
+    myForm.style.display = 'none';
+
+
     
     }
 });
@@ -102,9 +110,10 @@ function displayBooks(array) {
 
     //Loops trough the array
     for (let i = 0; i < array.length; i++) {
-        //Create change status button 
+        //Create change status button and class name 
         const changeBox = document.createElement('button');
         changeBox.className = "change-box";
+        //Change color and text depending on read status
         if (array[i].read === true) {
             changeBox.textContent = 'READ';
             changeBox.style.backgroundColor = 'green';
@@ -120,20 +129,22 @@ function displayBooks(array) {
             console.log(array[i].read);
             displayBooks(myLibrary);
         });
-       //const bookList = document.createElement('li');
+       //Const bookList = document.createElement('li');
        const  bookList = document.createElement('div');
        bookList.className = "card";
-       
+       //Create readStatusText to help visualize if read or not 
        const readStatusText = array[i].read ? 'read' : 'not read';
        readStatusText.className = 'read-status-text';
-        const removeButton = document.createElement('button');
+       //Create remove button 
+       const removeButton = document.createElement('button');
         removeButton.textContent = 'CANCEL BOOK';
         removeButton.className = 'remove-button';
+        //Remove book from library
         removeButton.addEventListener('click', () => {
             myLibrary.splice(i, 1);
             displayBooks(myLibrary);
         });
-        
+        //Visualize Book name, author, pages and status
         bookList.textContent = `${array[i].name} by ${array[i].author}, ${array[i].pages} pages. \r\n status: ${readStatusText}.\r\n`;
         hanger.appendChild(bookList);
         bookList.appendChild(changeBox);
